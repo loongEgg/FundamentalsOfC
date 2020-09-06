@@ -1,28 +1,21 @@
 #include<stdio.h>
 
+//#define SCANF
 /*
-	< Description >
-		input args in a C console
+  < Description >
+	gets(), scanf(), 字符串输入
 
-	<--- Input --->
-		argc: [int], 输入的字符串总数, 不用手动输入
-		argv: [char **], 二级指针, 等价于字符串数组
-
-	<-- Example -->
-		windows: test.exe arg1 arg2 arg3
-		window output redirection: test.exe > a.out arg1 arg2 arg3
+  <-- Example -->
+	window input redirection: test.exe < a.in
 */
-int main(int argc, char ** argv) {
-	if (argc <= 1)
-	{
-		printf("args is needed...\r\n");
-		return 1;
-	}
-
-	printf("arg count = %d, args:\r\n", argc);
-	for (int i = 0; i < argc; i++)
-	{
-		printf("\t arg[%d] = %s\r\n", i, argv[i]);
-	}
+int main(void) {
+	char input[256] = "\0";
+#ifdef SCANF
+#pragma warning(disable : 4996) /* VS中使用scanf();需要这个来禁用警告 */
+	scanf("%s", input);
+#else
+	gets(input);  /* 与scanf()不同之处在于gets()不会被空格中断 */
+#endif // GETS
+	printf("input: %s", input);
 	return 0;
 }
