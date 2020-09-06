@@ -10,6 +10,7 @@
 
 	<-- Example -->
 		windows: test.exe arg1 arg2 arg3
+		window output redirection: test.exe > a.out arg1 arg2 arg3
 */
 int main(int argc, char ** argv) {
 	if (argc <= 1)
