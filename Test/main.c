@@ -1,8 +1,15 @@
 #include<stdio.h>
 
 /*
-|  Input:  argc, [int], 输入的字符串总数, 不用手动输入
-|          argv, [char **], 二级指针, 等价于字符串数组
+	< Description >
+		input args in a C console
+
+	<--- Input --->
+		argc: [int], 输入的字符串总数, 不用手动输入
+		argv: [char **], 二级指针, 等价于字符串数组
+
+	<-- Example -->
+		windows: test.exe arg1 arg2 arg3
 */
 int main(int argc, char ** argv) {
 	if (argc <= 1)
